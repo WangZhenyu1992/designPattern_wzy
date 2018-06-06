@@ -1,12 +1,17 @@
 package com.wzy.template.headfirst.frame;
 
-import java.awt.*;
 import javax.swing.*;
+import java.awt.*;
 
+/**
+ * designPattern_wzy
+ *
+ * @author wangzhenyu
+ * @since 2018-06-06 17:32
+ */
 public class MyFrame extends JFrame {
-    private static final long serialVersionUID = 2L;
 
-    public MyFrame(String title) {
+    public MyFrame(String title){
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -14,13 +19,14 @@ public class MyFrame extends JFrame {
         this.setVisible(true);
     }
 
-    public void paint(Graphics graphics) {
+    @Override
+    public void paint(Graphics graphics){
         super.paint(graphics);
         String msg = "I rule!!";
         graphics.drawString(msg, 100, 100);
     }
 
     public static void main(String[] args) {
-        MyFrame myFrame = new MyFrame("Head First Design Patterns");
+        new MyFrame("Head First Design Patterns");
     }
 }
